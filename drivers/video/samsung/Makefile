@@ -1,3 +1,4 @@
+subdir-ccflags-y += -O2
 #
 # Makefile for the s3c framebuffer driver
 #

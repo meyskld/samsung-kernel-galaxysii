@@ -1,3 +1,4 @@
+subdir-ccflags-y += -O2
 #
 # Makefile for USB OTG Host Controller Drivers
 #
