@@ -667,12 +667,12 @@ static struct cpufreq_voltage_table s5pv310_lookup_volt_table[] = {
 		.int_volt	= 1075000,
 	}, {
 		.index		= L3,
-		.arm_volt	=  975000,
-		.int_volt	=  975000,
+		.arm_volt	=  850000,
+		.int_volt	=  900000,
 	}, {
 		.index		= L4,
-		.arm_volt	=  925000,
-		.int_volt	=  975000,
+		.arm_volt	=  800000,
+		.int_volt	=  850000,
 	},
 };
 
@@ -710,12 +710,12 @@ static struct cpufreq_voltage_table s5pv310_volt_table[CPUFREQ_LEVEL_END] = {
 		.int_volt	= 1075000,
 	}, {
 		.index		= L3,
-		.arm_volt	=  975000,
-		.int_volt	=  975000,
+		.arm_volt	=  850000,
+		.int_volt	=  900000,
 	}, {
 		.index		= L4,
-		.arm_volt	=  925000,
-		.int_volt	=  975000,
+		.arm_volt	=  800000,
+		.int_volt	=  850000,
 	},
 };
 #else
@@ -734,12 +734,12 @@ static struct cpufreq_voltage_table s5pv310_volt_table[CPUFREQ_LEVEL_END] = {
 		.int_volt	= 1075000,
 	}, {
 		.index		= L3,
-		.arm_volt	=  975000,
-		.int_volt	=  975000,
+		.arm_volt	=  850000,
+		.int_volt	=  900000,
 	}, {
 		.index		= L4,
-		.arm_volt	=  925000,
-		.int_volt	=  975000,
+		.arm_volt	=  800000,
+		.int_volt	=  850000,
 	},
 };
 #endif
@@ -775,7 +775,7 @@ static struct cpufreq_voltage_table s5pv310_volt_table[CPUFREQ_LEVEL_END] = {
 		.int_volt	=  975000,
 	}, {
 		.index		= L3,
-		.arm_volt	= 950000,
+		.arm_volt	=  950000,
 		.int_volt	=  975000,
 	},
 };
@@ -2263,8 +2263,8 @@ static int s5pv310_asv_table_update(void)
 			s5pv310_volt_table[i].arm_volt = 1350000;
 
 		/* Minimum Voltage */
-		if (s5pv310_volt_table[i].arm_volt < 925000)
-			s5pv310_volt_table[i].arm_volt = 925000;
+		if (s5pv310_volt_table[i].arm_volt < 800000)
+			s5pv310_volt_table[i].arm_volt = 800000;
 
 		printk(KERN_INFO "ASV voltage_table[%d].arm_volt = %d\n",
 				i, s5pv310_volt_table[i].arm_volt);
