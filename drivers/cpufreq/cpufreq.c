@@ -33,7 +33,7 @@
 						"cpufreq-core", msg)
 
 /* UV */
-int exp_UV_mV[11] = { 1300000, 1200000, 1100000, 1000000, 975000};
+int exp_UV_mV[5] = { 1300000, 1200000, 1100000, 1000000, 975000};
 /**
  * The "cpufreq driver" - the arch- or hardware-dependent low
  * level driver of CPUFreq support, and its spinlock. This lock
@@ -662,11 +662,11 @@ static ssize_t store_UV_mV_table(struct cpufreq_policy *policy,
       unsigned int ret = -EINVAL;
       int i = 0;
       ret = sscanf(buf, "%d %d %d %d %d", &exp_UV_mV[0], &exp_UV_mV[1], &exp_UV_mV[2], &exp_UV_mV[3], &exp_UV_mV[4]);
-      if(ret != 11) {
+      if(ret != 5) {
               return -EINVAL;
       }
       else
-              for( i = 0; i < 11; i++ )
+              for( i = 0; i < 5; i++ )
               {
                  exp_UV_mV[i] *= 1000;
               }
