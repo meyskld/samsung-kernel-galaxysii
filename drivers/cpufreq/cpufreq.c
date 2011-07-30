@@ -33,7 +33,7 @@
 						"cpufreq-core", msg)
 
 /* UV */
-int exp_UV_mV[6] = { 1300000, 1200000, 1100000, 1000000, 975000, 950000};
+int exp_UV_mV[6] = { 1300000, 1200000, 1100000, 950000, 900000, 875000};
 /**
  * The "cpufreq driver" - the arch- or hardware-dependent low
  * level driver of CPUFreq support, and its spinlock. This lock
