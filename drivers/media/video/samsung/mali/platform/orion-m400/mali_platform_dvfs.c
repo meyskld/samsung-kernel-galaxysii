@@ -83,10 +83,10 @@ int mali_dvfs_control=0;
 mali_dvfs_table mali_dvfs[MALI_DVFS_STEPS]={
 #ifdef CONFIG_CPU_S5PV310_EVT1
 #ifdef CONFIG_S5PV310_ASV
-                   /*step 0*/{100  ,1000000    , 850000},
+                   /*step 0*/{66  ,1000000    , 850000},
                    /*step 1*/{267  ,1000000    ,1100000} };
 #else
-		   /*step 0*/{100  ,1000000    , 800000},
+		   /*step 0*/{66  ,1000000    , 800000},
                    /*step 1*/{267  ,1000000    ,1050000} };
 
 #endif
@@ -362,22 +362,22 @@ static mali_bool mali_dvfs_table_update()
 		case 0:
 		case 1:
 		case 2:
-			mali_dvfs[MALI_DVFS_L3].vol =  850000; // 100Mhz
+			mali_dvfs[MALI_DVFS_L3].vol =  850000; // 66Mhz
 			mali_dvfs[MALI_DVFS_L2].vol = 1100000; // 266Mhz
 			break;
 		case 3:
 		case 4:
-			mali_dvfs[MALI_DVFS_L3].vol =  800000; // 100Mhz
+			mali_dvfs[MALI_DVFS_L3].vol =  800000; // 66Mhz
 			mali_dvfs[MALI_DVFS_L2].vol = 1000000; // 266Mhz
 			break;
 		case 5:
 		case 6:
-			mali_dvfs[MALI_DVFS_L3].vol =  800000; // 100Mhz
+			mali_dvfs[MALI_DVFS_L3].vol =  800000; // 66Mhz
 			mali_dvfs[MALI_DVFS_L2].vol = 1000000; // 266Mhz
 			break;
 		case 7:
 		case 8:
-			mali_dvfs[MALI_DVFS_L3].vol =  800000; // 100Mhz
+			mali_dvfs[MALI_DVFS_L3].vol =  800000; // 66Mhz
 			mali_dvfs[MALI_DVFS_L2].vol =  950000; // 266Mhz
 			break;
 		default :
