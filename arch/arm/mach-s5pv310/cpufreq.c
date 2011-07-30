@@ -219,10 +219,10 @@ struct busfreq_table {
 	unsigned int volt;
 };
 static struct busfreq_table s5pv310_busfreq_table[] = {
-	{LV_0, 400000, 1100000},
-	{LV_1, 267000, 1000000},
+	{LV_0, 400000, 1075000},
+	{LV_1, 267000,  975000},
 #ifndef CONFIG_MACH_P6_REV02
-	{LV_2, 133000, 1000000},
+	{LV_2, 133000,  975000},
 #endif
 	{0, 0, 0},
 };
@@ -645,23 +645,23 @@ static struct cpufreq_voltage_table s5pv310_lookup_volt_table[] = {
 	{
 		.index		= L0,
 		.arm_volt	= 1300000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L1,
 		.arm_volt	= 1200000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L2,
 		.arm_volt	= 1100000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L3,
 		.arm_volt	= 1000000,
-		.int_volt	= 1000000,
+		.int_volt	= 900000,
 	}, {
 		.index		= L4,
 		.arm_volt	= 975000,
-		.int_volt	= 1000000,
+		.int_volt	= 850000,
 	},
 };
 
@@ -688,23 +688,23 @@ static struct cpufreq_voltage_table s5pv310_volt_table[CPUFREQ_LEVEL_END] = {
 	{
 		.index		= L0,
 		.arm_volt	= 1300000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L1,
 		.arm_volt	= 1200000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L2,
 		.arm_volt	= 1100000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L3,
 		.arm_volt	= 1000000,
-		.int_volt	= 1000000,
+		.int_volt	=  900000,
 	}, {
 		.index		= L4,
-		.arm_volt	= 975000,
-		.int_volt	= 1000000,
+		.arm_volt	=  975000,
+		.int_volt	=  850000,
 	},
 };
 #else
@@ -712,23 +712,23 @@ static struct cpufreq_voltage_table s5pv310_volt_table[CPUFREQ_LEVEL_END] = {
 	{
 		.index		= L0,
 		.arm_volt	= 1300000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L1,
 		.arm_volt	= 1200000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L2,
 		.arm_volt	= 1100000,
-		.int_volt	= 1100000,
+		.int_volt	= 1000000,
 	}, {
 		.index		= L3,
 		.arm_volt	= 1000000,
-		.int_volt	= 1000000,
+		.int_volt	=  900000,
 	}, {
 		.index		= L4,
-		.arm_volt	= 950000,
-		.int_volt	= 1000000,
+		.arm_volt	=  950000,
+		.int_volt	=  850000,
 	},
 };
 #endif
