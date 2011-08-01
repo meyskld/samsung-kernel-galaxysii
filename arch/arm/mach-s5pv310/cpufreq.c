@@ -1251,15 +1251,39 @@ static int s5pv310_target(struct cpufreq_policy *policy,
 
 	if (s5pv310_max_armclk == ARMCLOCK_1200MHZ) {
 #ifdef CONFIG_FREQ_STEP_UP_L2_L0
+
+		if (index == L0) {
+			if (old_index > L5)
+				index = L5;
+
+			else if (old_index > L4)
+				index = L4;
+
+			else if (old_index > L3)
+				index = L3;
+
+			else if (old_index > L2)
+				index = L2;
+
+			else if (old_index > L1)
+				index = L1;
+		}
+
+
+#if 0
 		/* change L2 -> L0 */
 		if ((index == L0) && (old_index > L2)) {
 			printk(KERN_ERR "index= %d, old_index= %d\n", index, old_index);
 			index = L2;
+
+
 		}
+#endif
+
 #else
 		/* change L2 -> L1 and change L1 -> L0 */
 		if (index == L0) {
-			printk(KERN_ERR "index= %d, old_index= %d\n", index, old_index);
+			//printk(KERN_ERR "index= %d, old_index= %d\n", index, old_index);
 			if (old_index > L1)
 				index = L1;
 
@@ -1271,6 +1295,7 @@ static int s5pv310_target(struct cpufreq_policy *policy,
 
 			if (old_index > L4)
 				index = L4;
+
 			if (old_index > L5)
 				index = L5;
 		}
